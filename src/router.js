@@ -2,13 +2,19 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 //define a routes
-const home = () => import(/* webpackChunkName: "home" */ "./views/Index.vue");
+const home = () => import("./views/Index.vue");
+const surah = () => import("./views/Surah.vue");
 
 const routes = [
   {
     path: "/",
     name: "home",
     component: home,
+  },
+  {
+    path: "/:id",
+    name: "surah",
+    component: surah,
   },
 ];
 

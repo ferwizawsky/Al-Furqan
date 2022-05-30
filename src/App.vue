@@ -11,7 +11,7 @@ import HelloWorld from "./components/HelloWorld.vue";
   >
     <div class="font-bold tracking-widest text-gray-500">Al-Furqon</div>
   </div>
-  <div class="min-h-screen bg-gray-100 pt-16">
+  <div class="min-h-screen bg-gray-100 py-16">
     <router-view></router-view>
   </div>
 </template>

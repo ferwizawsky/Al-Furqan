@@ -1,8 +1,10 @@
 <script setup>
+import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 import { onMounted, ref } from "vue";
 
 let ayahs = ref([]);
+let router = useRouter();
 
 //mounted
 onMounted(() => {
@@ -17,6 +19,10 @@ onMounted(() => {
       console.log(error.response.data);
     });
 });
+
+function move(e) {
+  router.push("/" + e);
+}
 </script>
 
 <template>
@@ -27,6 +33,7 @@ onMounted(() => {
       <div
         v-for="(ayah, index) in ayahs"
         :key="index"
+        @click="move(ayah.number)"
         class="bg-white p-2 rounded-lg drop-shadow-xl relative overflow-y-hidden"
       >
         <div
